@@ -22,6 +22,9 @@
 
     var parseAlbum = function(albumData) {
         if (typeof albumData !== 'object') $('#loading-info').html('Ошибка при загрузке информации об альбоме!');
+        else if (albumData.protected) {
+          $('#loading-info').html('Альбом защищён паролем!');
+        }
         else {
             $('#loading-info-more').html(albumData.imageCount + ' фотографий');
 
